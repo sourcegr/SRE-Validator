@@ -1,10 +1,10 @@
 SRE-Validator
 ==
-A fullly tested, 100% covered validator for node (WIP).
+A fullly tested, 100% covered validator for node --WIP
 
 Installation
 -
-npm install @sre/validator
+npm install @sre/validator -- WIP
 
 
 ## Usage
@@ -37,7 +37,11 @@ v.getErrors();
 ```
 
 ## Rules
-The rules can be a string, an array of strings, or an object. Typically, strings and array of strings are used when there is no need for parameters.
+The rules should be an array of objects.
+
+The key of each object, should be the name of the input you want to check against.
+ 
+The value can be a string, an array of strings, or an object. Typically, strings and array of strings are used when there is no need for parameters.
 
 ```javascript
 const rules = [
