@@ -4,7 +4,7 @@ A fullly tested, 100% covered validator for node --WIP
 
 Installation
 -
-npm install @sre/validator -- WIP
+npm install --save sourcegr/SRE-Validator#master -- WIP
 
 
 ## Usage
@@ -66,16 +66,37 @@ Currently, the following rules exist
 
 
 **Number Rules**
-- `between` - Number should be between a range)
+- `between` - Number should be between a range
 - `notBetween` - The opposite of `between`
+- `negative` - WIP
+- `positive` - WIP
+- `nonZero` - WIP
+- `integer` - WIP
+- `lessThan` - WIP
+- `moreThan` - WIP
+
 
 
 **String Rules**
 - `minLength` - String length should be less than this
-- `notBetween` - The opposite of `between`
+- `maxLength` - WIP
+- `exactLength` - WIP
+- `startsWith` - WIP
+- `endsWith` - WIP
+- `contains` - WIP
+- `alpha` - WIP
+- `alphanum` - WIP
+- `alphanumdash` - WIP
+- `slug` - WIP
+- `url` - WIP
+- `email` - WIP
+- `regexp` - WIP
 
 
-The rules are added on demand. If you want a specific rule please add it yourself and help this lib grow. Just clone the repo and fire away!
+The rules are added on demand. If you want a specific rule please add it yourself and help this lib grow.
+
+Just clone the repo and fire away!
+
 
 
 ## License

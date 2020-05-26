@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sourcegr/inputValidator.git"
+    "url": "git+https://github.com/sourcegr/SRE-Validator.git"
   },
   "author": "Vagelis Papadogiannakis <papas@source.gr>",
   "license": "MIT",
