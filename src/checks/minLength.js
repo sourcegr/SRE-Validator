@@ -3,17 +3,20 @@
  *
  * @param {string} input - the input
  *
- * @param {{max_length:number, include_limits:boolean}|number} params - the min length of the input, or an array with min length and a Boolean to indecate whether to incude limits or not
+ * @param {[number, ?boolean]|number} params - the min length of the input, or an array with min length and a Boolean to indicate whether to incude limits or not
  *
  * @return {boolean} result - true / false
  */
 module.exports = function minLength (input, params) {
-	input = String(input);
 	params = Array.isArray(params) ? params : [params, false];
 
-	const [l, include_limits] = params;
+	if (params.length === 1) params = [...params, true];
+	let [len, include_limits] = params;
+
+	len = Number(len);
+	input = String(input);
 
 	return include_limits ?
-		input.length >= l :
-		input.length > l;
+		input.length >= len :
+		input.length > len;
 }

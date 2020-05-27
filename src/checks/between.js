@@ -1,21 +1,26 @@
 const isNumber = require('./tools/isNumber');
+
 /**
  * between checks if the number is between two values
  * @param {number} input - the number to check against
- * @param {{min:number, max:number, ?include_limits:boolean}} definition - An array with the [min, max, include_limits=true] values
+ * @param {[number, number, ?boolean]} params - An array with the [min, max, include_limits=true] values
  *
  * @return {boolean} true if the number is between the limits
  *
  */
-module.exports = function between (input, definition) {
-	if (!Array.isArray(definition) || definition.length < 2 || definition.length > 3) {
-		throw new Error('minLength parameter should be an array with 2 members');
+module.exports = function between (input, params) {
+	if (!Array.isArray(params) || params.length < 2 || params.length > 3) {
+		throw new Error('minLength parameter should be an array with 2 or three members');
 	}
-	const check = Number(input);
-	let [min, max, include_limits] = definition;
-	if (include_limits === undefined) include_limits = true;
+
+	if (params.length === 2) params = [...params, true];
+	let [min, max, include_limits] = params;
+
+	input = Number(input);
+	min = Number(min);
+	max = Number(max);
 
 	return isNumber(input) && include_limits ?
-		Number(min) <= check && check <= Number(max) :
-		Number(min) < check && check < Number(max) ;
+		min <= input && input <= max :
+		min < input && input < max ;
 }

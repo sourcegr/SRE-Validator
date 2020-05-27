@@ -67,7 +67,7 @@ Currently, the following rules exist
 
 **Number Rules**
 - `{between: [min, max, include_limits=true]}`    
-Should be between the range min, max. To exclude the min/max values, set `include_limits` to `false`
+Should be between the range defined by `min`, `max`. To exclude the min/max values, set `include_limits` to `false`
 
 - `{notBetween: [min, max, include_limits=true]}`  
 The opposite of `between`
@@ -78,20 +78,26 @@ Positive number / Positive number but also allow zero
 - `'negative'` / `{negative:true}`  
 Negative number / Negative number but also allow zero
 
-
-
 - `'nonZero'`  
 number and not zero. 
 
-- `integer` - WIP
-- `lessThan` - WIP
-- `moreThan` - WIP
+- `{lessThan:number}` / `{lessThan:[number, true]}` /   
+WIP - less than `number` / less than or equal to `number`
+  
+- `{moreThan:number}` / `{moreThan:[number, true]}` /   
+WIP - more than `number` / more than or equal to `number`
+  
 
+- `integer` - WIP
 
 
 **String Rules**
-- `minLength` - String length should be less than this
-- `maxLength` - WIP
+- `{minLength: number}` / `{minLength:[number, true]}`  
+length should be more  / more than or equal to `number`
+
+- `{maxLength: number}` / `{maxLength:[number, true]}`  
+length should be less  / less than or equal to `number`
+
 - `exactLength` - WIP
 - `startsWith` - WIP
 - `endsWith` - WIP
