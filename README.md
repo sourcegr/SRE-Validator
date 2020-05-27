@@ -62,15 +62,27 @@ const rules = [
 Currently, the following rules exist
 
 **Generic Rules**
-- `required` - Check if the field exists
+- `'required'` - Check if the field exists
 
 
 **Number Rules**
-- `between` - Number should be between a range
-- `notBetween` - The opposite of `between`
-- `negative` - WIP
-- `positive` - WIP
-- `nonZero` - WIP
+- `{between: [min, max, include_limits=true]}`    
+Should be between the range min, max. To exclude the min/max values, set `include_limits` to `false`
+
+- `{notBetween: [min, max, include_limits=true]}`  
+The opposite of `between`
+
+- `'positive'` / `{positive:true}`  
+Positive number / Positive number but also allow zero
+
+- `'negative'` / `{negative:true}`  
+Negative number / Negative number but also allow zero
+
+
+
+- `'nonZero'`  
+number and not zero. 
+
 - `integer` - WIP
 - `lessThan` - WIP
 - `moreThan` - WIP
