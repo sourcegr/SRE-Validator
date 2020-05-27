@@ -9,8 +9,8 @@ const input = {
 	test_number: 100,
 	test_array: [],
 	the_zero: 0,
-	positive: 5,
-	negative: -5,
+	five: 5,
+	minus_five: -5,
 };
 
 const v = Validator.create(input)
@@ -24,34 +24,8 @@ describe('Number validations:', function() {
 			assert.strictEqual(res, true);
 		});
 	});
-	describe('positive:', function () {
-		it('Should return TRUE, number is positive', function() {
-			const res = v.setRules([{
-				positive: 'positive'
-			}]).validate();
-			assert.strictEqual(res, true);
-		});
-		it('Should return TRUE, number is zero, but we allow it', function() {
-			const res = v.setRules([{
-				the_zero: {positive: true}
-			}]).validate();
-			assert.strictEqual(res, true);
-		});
-	});
-	describe('negative:', function () {
-		it('Should return TRUE, number is negative', function() {
-			const res = v.setRules([{
-				negative: 'negative'
-			}]).validate();
-			assert.strictEqual(res, true);
-		});
-		it('Should return TRUE, number is zero, but we allow it', function() {
-			const res = v.setRules([{
-				the_zero: {negative: true}
-			}]).validate();
-			assert.strictEqual(res, true);
-		});
-	});
+
+
 	describe('nonZero:', function () {
 		it('Should return FALSE, number is zero', function() {
 			const res = v.setRules([{
@@ -61,31 +35,18 @@ describe('Number validations:', function() {
 		});
 		it('Should return TRUE, number is positive', function() {
 			const res = v.setRules([{
-				positive: 'nonZero'
+				five: 'nonZero'
 			}]).validate();
 			assert.strictEqual(res, true);
 		});
 		it('Should return TRUE, number is negative', function() {
 			const res = v.setRules([{
-				negative: 'nonZero'
+				minus_five: 'nonZero'
 			}]).validate();
 			assert.strictEqual(res, true);
 		});
 	});
-	describe('between:', function () {
-		it('Should return TRUE, number is between the limit', function() {
-			const res = v.setRules([{
-				test_number: {between: [90, 110]}
-			}]).validate();
-			assert.strictEqual(res, true);
-		});
-		it('Should return FALSE, number is NOT between the limit', function() {
-			const res = v.setRules([{
-				test_number: {between: [90, 92]}
-			}]).validate();
-			assert.strictEqual(res, false);
-		});
-	});
+
 	describe('notBetween:', function () {
 		it('Should return FALSE, number is between the limit', function() {
 			const res = v.setRules([{

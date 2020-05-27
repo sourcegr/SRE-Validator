@@ -1,10 +1,12 @@
-const between = require('./between');
-const notBetween = require('./notBetween');
-const negative = require('./negative');
-const positive = require('./positive');
-const nonZero = require('./nonZero');
-const minLength = require('./minLength');
-const maxLength = require('./maxLength');
+const between = require('./Number/between');
+const notBetween = require('./Number/notBetween');
+const lessThan = require('./Number/lessThan');
+const moreThan = require('./Number/moreThan');
+const negative = require('./Number/negative');
+const positive = require('./Number/positive');
+const nonZero = require('./Number/nonZero');
+const minLength = require('./String/minLength');
+const maxLength = require('./String/maxLength');
 const required = require('./required');
 
 module.exports = {
@@ -12,6 +14,8 @@ module.exports = {
 
 	between,
 	notBetween,
+	lessThan,
+	moreThan,
 	negative,
 	positive,
 	nonZero,

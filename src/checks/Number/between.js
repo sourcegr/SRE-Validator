@@ -1,4 +1,4 @@
-const isNumber = require('./tools/isNumber');
+const isNumber = require('../tools/isNumber');
 
 /**
  * between checks if the number is between two values

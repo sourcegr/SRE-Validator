@@ -1,4 +1,4 @@
-const isNumber = require('./tools/isNumber');
+const isNumber = require('../tools/isNumber');
 /**
  * nonZero checks if input is number and not zero
  *

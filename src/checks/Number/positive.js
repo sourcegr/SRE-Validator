@@ -1,4 +1,4 @@
-const isNumber = require('./tools/isNumber');
+const lessThan = require('./lessThan');
 
 /**
  * positive, check if number is positive
@@ -10,9 +10,5 @@ const isNumber = require('./tools/isNumber');
  * @return {boolean} result - true / false
  */
 module.exports = function positive (input, include_zero = false) {
-	input = Number(input);
-
-	return isNumber(input) && include_zero ?
-		input >= 0 :
-		input > 0;
+	return lessThan(0, [input, include_zero]);
 }
