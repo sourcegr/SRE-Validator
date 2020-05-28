@@ -66,8 +66,14 @@ Currently, the following rules exist
 
 
 **Number Rules**
+
+_WARNING ON NUMBER RULES_
+
+The lib does no checks whatsoever if the input is a number before running any of the checks bellow. If you want to make a check, please include the `isNumber` check BEFORE any other checks.
+
+ 
 - `{between: [min, max, include_limits=true]}`    
-Should be between the range defined by `min`, `max`. To exclude the min/max values, set `include_limits` to `false`
+Between the range defined by `min`, `max`. To exclude the min/max values, set `include_limits` to `false`
 
 - `{notBetween: [min, max, include_limits=true]}`  
 The opposite of `between`
@@ -79,13 +85,19 @@ Positive number / Positive number but also allow zero
 Negative number / Negative number but also allow zero
 
 - `'nonZero'`  
-number and not zero. 
+Number and not zero. 
 
 - `{lessThan:number}` / `{lessThan:[number, true]}` /   
-WIP - less than `number` / less than or equal to `number`
+Less than `number` / less than or equal to `number`
   
 - `{moreThan:number}` / `{moreThan:[number, true]}` /   
-WIP - more than `number` / more than or equal to `number`
+More than `number` / more than or equal to `number`
+
+- `{lessThanOrEqual:number}`   
+Less than or equal to `number`
+  
+- `{moreThanOrEqual:number}`   
+More than or equal to `number`
   
 
 - `integer` - WIP
