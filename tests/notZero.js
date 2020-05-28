@@ -60,12 +60,6 @@ describe('We check notZero', function () {
 			assert.strictEqual(res, false);
 		});
 
-		it('"0text" IS zero', function() {
-			const res = v.setRules([{
-				zero_string: 'notZero'
-			}]).validate();
-			assert.strictEqual(res, false);
-		});
 		it('"0<space>" IS zero', function() {
 			const res = v.setRules([{
 				zero_space: 'notZero'
