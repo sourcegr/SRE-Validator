@@ -3,7 +3,7 @@ const lessThan = require('./lessThan');
 /**
  * negative, check if number is negative
  *
- * @param {*} input - the input (will be casted to Number()
+ * @param {*} input - the input (will be casted to Number)
  *
  * @param {?boolean} include_zero - defaults to false
  *

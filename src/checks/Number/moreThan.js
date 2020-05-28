@@ -3,7 +3,7 @@ const lessThan = require('./lessThan');
 /**
  * moreThan, check if input is more than a number
  *
- * @param {*} input - the input (will be casted to Number()
+ * @param {*} input - the input (will be casted to Number)
  *
  * @param {[number, ?boolean]|number} params - the number to check against, or an array with the number and a Boolean to indicate whether to incude nuber or not
  *

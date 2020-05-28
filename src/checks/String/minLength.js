@@ -9,8 +9,8 @@
  */
 module.exports = function minLength (input, params) {
 	params = Array.isArray(params) ? params : [params, false];
-
 	if (params.length === 1) params = [...params, false];
+
 	let [len, include_limits] = params;
 
 	len = Number(len);

@@ -1,6 +1,6 @@
 {
   "name": "inputvalidator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a massive input validator for node",
   "main": "index.js",
   "scripts": {

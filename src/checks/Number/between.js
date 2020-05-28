@@ -2,7 +2,8 @@ const isNumber = require('../tools/isNumber');
 
 /**
  * between checks if the number is between two values
- * @param {number} input - the number to check against
+
+ * @param {*} input - the input (will be casted to Number)
  * @param {[number, number, ?boolean]} params - An array with the [min, max, include_limits=true] values
  *
  * @return {boolean} true if the number is between the limits
@@ -17,10 +18,10 @@ module.exports = function between (input, params) {
 	let [min, max, include_limits] = params;
 
 	input = Number(input);
-	min = Number(min);
-	max = Number(max);
+	if (!isNumber(min)) throw new Error('min should be a number');
+	if (!isNumber(max)) throw new Error('max should be a number');
 
-	return isNumber(input) && include_limits ?
+	return include_limits ?
 		min <= input && input <= max :
 		min < input && input < max ;
 }

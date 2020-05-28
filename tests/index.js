@@ -26,26 +26,6 @@ describe('Number validations:', function() {
 	});
 
 
-	describe('nonZero:', function () {
-		it('Should return FALSE, number is zero', function() {
-			const res = v.setRules([{
-				the_zero: 'nonZero'
-			}]).validate();
-			assert.strictEqual(res, false);
-		});
-		it('Should return TRUE, number is positive', function() {
-			const res = v.setRules([{
-				five: 'nonZero'
-			}]).validate();
-			assert.strictEqual(res, true);
-		});
-		it('Should return TRUE, number is negative', function() {
-			const res = v.setRules([{
-				minus_five: 'nonZero'
-			}]).validate();
-			assert.strictEqual(res, true);
-		});
-	});
 
 	describe('notBetween:', function () {
 		it('Should return FALSE, number is between the limit', function() {
@@ -62,6 +42,7 @@ describe('Number validations:', function() {
 		});
 	});
 });
+
 describe('String validations:', function() {
 	describe('minLength:', function() {
 		it('Should return TRUE, the length of the string is more than the limit', function() {

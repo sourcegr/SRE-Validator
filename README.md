@@ -67,9 +67,9 @@ Currently, the following rules exist
 
 **Number Rules**
 
-_WARNING ON NUMBER RULES_
+- `isNumber` - checks for a number.
 
-The lib does no checks whatsoever if the input is a number before running any of the checks bellow. If you want to make a check, please include the `isNumber` check BEFORE any other checks.
+_WARNING ON NUMBER RULES BELLOW_ : The lib does no checks whatsoever if the input is a number before running any of the checks bellow. If you want to make a check, please include the `isNumber` check along with any other checks.
 
  
 - `{between: [min, max, include_limits=true]}`    

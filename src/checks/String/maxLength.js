@@ -1,3 +1,4 @@
+const minLength = require('./minLength');
 /**
  * maxLength, check for max Length
  *
@@ -9,14 +10,8 @@
  */
 module.exports = function maxLength (input, params) {
 	params = Array.isArray(params) ? params : [params, false];
-
 	if (params.length === 1) params = [...params, false];
-	let [len, include_limits] = params;
+	params[1] = !params[1];
 
-	len = Number(len);
-	input = String(input);
-
-	return include_limits ?
-		input.length <= len :
-		input.length < len;
+	return !minLength(input, params);
 }

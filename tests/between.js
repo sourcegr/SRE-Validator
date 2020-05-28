@@ -3,7 +3,6 @@ const Validator = require('../src/Validator');
 
 global.dd = console.log;
 
-
 const input = {
 	five: 5,
 };

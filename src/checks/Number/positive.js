@@ -1,14 +1,13 @@
-const lessThan = require('./lessThan');
+const moreThan = require('./moreThan');
 
 /**
  * positive, check if number is positive
  *
- * @param {*} input - the input (will be casted to Number()
- *
+ * @param {*} input - the input (will be casted to Number)
  * @param {?boolean} include_zero - defaults to false
  *
  * @return {boolean} result - true / false
  */
 module.exports = function positive (input, include_zero = false) {
-	return lessThan(0, [input, include_zero]);
+	return moreThan(input, [0, include_zero]);
 }
