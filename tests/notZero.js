@@ -12,7 +12,8 @@ const input = {
 	quoted_zero: '0',
 	zero_string: "0text",
 	zero_space: '0 ',
-	infinity: Infinity
+	infinity: Infinity,
+	string_key: "a string"
 };
 
 const v = Validator.create(input)
@@ -38,14 +39,6 @@ describe('We check notZero', function () {
 			assert.strictEqual(res, true);
 		});
 
-
-		it('"" IS zero', function() {
-			const res = v.setRules([{
-				empty_string: 'notZero'
-			}]).validate();
-			assert.strictEqual(res, false);
-		});
-
 		it('0 IS zero', function() {
 			const res = v.setRules([{
 				zero: 'notZero'
@@ -65,6 +58,20 @@ describe('We check notZero', function () {
 				zero_space: 'notZero'
 			}]).validate();
 			assert.strictEqual(res, false);
+		});
+		it('"" should throw', function() {
+			assert.throws( () => {
+				const res = v.setRules([{
+					empty_string: 'notZero'
+				}]).validate();
+			}, Error, "Error thrown");
+		});
+		it('"string" should throw', function() {
+			assert.throws( () => {
+				const res = v.setRules([{
+					string_key: 'notZero'
+				}]).validate();
+			}, Error, "Error thrown");
 		});
 
 });

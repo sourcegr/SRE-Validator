@@ -9,7 +9,7 @@ const isNumber = require('../tools/isNumber');
  *
  */
 module.exports = function notEqualTo(input, check = 0) {
-	if (!isNumber(check)) throw new Error('check should be a number');
+	if (!isNumber(input)) throw new Error('check should be a number');
 	input = Number(input);
 	return input !== check ;
 }
